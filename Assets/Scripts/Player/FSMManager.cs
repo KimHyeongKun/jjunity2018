@@ -18,13 +18,36 @@ public class FSMManager : MonoBehaviour {
     Dictionary<PlayerState, PlayerFSMState> states
         = new Dictionary<PlayerState, PlayerFSMState>();
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        states.Add(
+            PlayerState.IDLE, 
+            GetComponent<PlayerIDLE>()
+        );
+
+        states.Add(PlayerState.RUN, GetComponent<PlayerRUN>());
+        states.Add(PlayerState.CHASE, GetComponent<PlayerCHASE>());
+        states.Add(PlayerState.ATTACK, GetComponent<PlayerATTACK>());
+
+        states[startState].enabled = true;
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		if(Input.GetMouseButtonDown(0))
+        {
+            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(r, out hit, 1000))
+            {
+                Debug.Log(hit.point);
+            }
+        }
 	}
 }
