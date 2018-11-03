@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIDLE : MonoBehaviour {
+public class PlayerIDLE : PlayerFSMState
+{
 
 	// Use this for initialization
 	void Start () {

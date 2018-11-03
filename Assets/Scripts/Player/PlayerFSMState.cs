@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCHASE : PlayerFSMState
-{
+public class PlayerFSMState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +11,6 @@ public class PlayerCHASE : PlayerFSMState
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("CHASE");
-
-    }
+		
+	}
 }

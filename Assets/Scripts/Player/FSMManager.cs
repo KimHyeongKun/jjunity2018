@@ -12,6 +12,9 @@ public enum PlayerState
 
 public class FSMManager : MonoBehaviour {
 
+    public PlayerState currentState;
+    public PlayerState startState;
+
 	// Use this for initialization
 	void Start () {
 		

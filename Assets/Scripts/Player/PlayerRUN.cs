@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRUN : MonoBehaviour {
+public class PlayerRUN : PlayerFSMState
+{
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +12,7 @@ public class PlayerRUN : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        Debug.Log("RUN");
+
+    }
 }
