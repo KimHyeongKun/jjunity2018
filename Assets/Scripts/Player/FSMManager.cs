@@ -15,6 +15,9 @@ public class FSMManager : MonoBehaviour {
     public PlayerState currentState;
     public PlayerState startState;
 
+    Dictionary<PlayerState, PlayerFSMState> states
+        = new Dictionary<PlayerState, PlayerFSMState>();
+
 	// Use this for initialization
 	void Start () {
 		
